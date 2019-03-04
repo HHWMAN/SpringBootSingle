@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Table(name="t_user")
 public class User {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  //mysql专有自增方式
     @Column(name = "t_id")
     private Long id;
 

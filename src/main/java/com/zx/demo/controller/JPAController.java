@@ -23,7 +23,7 @@ public class JPAController {
         tempUser.setName("zx");
         tempUser.setAge(18);
         tempUser.setAddress("shanghai");
-        return userJPA.save(user);
+        return userJPA.save(tempUser);
     }
 
 }

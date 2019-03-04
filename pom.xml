@@ -37,11 +37,13 @@
 		</dependency>
 
 		<!--引入MySQL的依赖关系-->
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
+			<version>8.0.13</version>
 		</dependency>
+
 
 		<!--引入JPA的依赖关系-->
 		<dependency>
