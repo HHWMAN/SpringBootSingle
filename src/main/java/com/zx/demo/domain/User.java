@@ -6,6 +6,7 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Data
 @Entity
@@ -26,6 +27,8 @@ public class User {
 
     @Column(name = "t_address")
     private String address;
+
+    private Date birthday;
 
 }
 
