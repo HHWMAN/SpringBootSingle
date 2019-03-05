@@ -4,6 +4,8 @@ package com.zx.demo.domain;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 @Data
 @Entity
@@ -14,9 +16,11 @@ public class User {
     @Column(name = "t_id")
     private Long id;
 
+    @Size(min = 2)
     @Column(name = "t_name")
     private String name;
 
+    @Min(value = 18,message = "必须是成年人")
     @Column(name = "t_age")
     private int age;
 

@@ -3,9 +3,12 @@ package com.zx.demo.controller;
 import com.zx.demo.domain.User;
 import com.zx.demo.service.UserJPA;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping(value = "/user")
@@ -20,10 +23,16 @@ public class JPAController {
     @RequestMapping(value = "/save", method = RequestMethod.GET)
     public User save(User user) {
         User tempUser = new User();
-        tempUser.setName("zx");
-        tempUser.setAge(18);
+        tempUser.setName("lisi");
+        tempUser.setAge(13);
         tempUser.setAddress("shanghai");
         return userJPA.save(tempUser);
+    }
+
+    //@Validated
+    @RequestMapping(value = "/save2", method = RequestMethod.GET)
+    public User save2(@Valid User user) {
+        return userJPA.save(user);
     }
 
 }
