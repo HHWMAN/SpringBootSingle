@@ -4,7 +4,9 @@ import com.zx.demo.domain.User;
 import com.zx.demo.service.UserJPA;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.util.Assert;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/user")
@@ -23,13 +26,13 @@ public class JPAController {
     @Autowired
     private UserJPA userJPA;
 
-    @InitBinder
+    /*@InitBinder
     protected void initBinder(WebDataBinder binder)
     {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         dateFormat.setLenient(false);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
-    }
+    }*/
 
 
     /**
@@ -47,6 +50,10 @@ public class JPAController {
     //@Validated
     @RequestMapping(value = "/save2", method = RequestMethod.GET)
     public User save2(@Valid User user,BindingResult result) {
+        if(result.hasFieldErrors()){
+            List<FieldError> errorList = result.getFieldErrors();
+            System.out.println("error");
+        }
         return userJPA.save(user);
     }
 
