@@ -66,7 +66,10 @@ public class MyBean implements CommandLineRunner {
 @Value("${property}")
 或者
 @ConfigurationProperties("acme") 读取配置到类，支持嵌套
-@EnableConfigurationProperties(AcmeProperties.class) 使用配置类
+@EnableConfigurationProperties(AcmeProperties.class) 注册配置类
 
-示例
+使用时直接注入
+@Autowired
+private final AcmeProperties properties;
+
 
