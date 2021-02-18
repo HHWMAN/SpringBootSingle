@@ -1,3 +1,4 @@
+/*
 package com.zx.demo.controller;
 
 import com.zx.demo.domain.User;
@@ -26,18 +27,22 @@ public class JPAController {
     @Autowired
     private UserJPA userJPA;
 
-    /*@InitBinder
+    */
+/*@InitBinder
     protected void initBinder(WebDataBinder binder)
     {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         dateFormat.setLenient(false);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
-    }*/
+    }*//*
 
 
-    /**
+
+    */
+/**
      * 数据新增或更新，save方法可以执行添加也可以执行更新，如果需要执行持久化的实体存在主键值则更新数据，如果不存在则添加数据。
-     */
+     *//*
+
     @RequestMapping(value = "/save", method = RequestMethod.GET)
     public User save(User user) {
         User tempUser = new User();
@@ -62,4 +67,4 @@ public class JPAController {
         return user;
     }
 
-}
+}*/

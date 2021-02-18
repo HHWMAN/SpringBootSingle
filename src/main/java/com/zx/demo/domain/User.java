@@ -1,3 +1,4 @@
+/*
 package com.zx.demo.domain;
 
 
@@ -32,3 +33,4 @@ public class User {
 
 }
 
+*/

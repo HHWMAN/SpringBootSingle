@@ -26,6 +26,9 @@ Spring Validation验证框架对参数的验证机制提供了@Validated（Sprin
 
 排除某种自动配置:@EnableAutoConfiguration（exclude = {DataSourceAutoConfiguration.class}）
 
+实际上，只要有@EnableAutoConfiguration注解，就能正常启动了
+但是由于没有扫描项目中相关组件，所以会找不到对应URL,访问失败
+
 2.2自定义启动球配置
 public static void main(String[] args) {
 	SpringApplication app = new SpringApplication(MySpringConfiguration.class);
@@ -71,5 +74,8 @@ public class MyBean implements CommandLineRunner {
 使用时直接注入
 @Autowired
 private final AcmeProperties properties;
+
+五、lombok使用注意
+lombok在idea中使用，需要下载安装相应的插件，否则get/set还是会报错的
 
 

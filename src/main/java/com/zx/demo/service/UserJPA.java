@@ -1,3 +1,4 @@
+/*
 package com.zx.demo.service;
 
 import com.zx.demo.domain.User;
@@ -9,3 +10,4 @@ import java.io.Serializable;
 public interface UserJPA extends JpaRepository<User,Long>,Serializable {
 
 }
+*/
